@@ -1,3 +1,9 @@
+gmp (2:5.0.2+dfsg-2ubuntu1pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 24 Dec 2013 20:17:16 +0000
+
 gmp (2:5.0.2+dfsg-2ubuntu1) precise; urgency=low
 
   * Merge with Debian; remaining changes:
