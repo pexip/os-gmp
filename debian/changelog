@@ -1,3 +1,40 @@
+gmp (2:6.1.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream.
+
+ -- Steve M. Robbins <smr@debian.org>  Tue, 20 Dec 2016 23:39:47 -0600
+
+gmp (2:6.1.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream.
+
+ -- Steve M. Robbins <smr@debian.org>  Fri, 24 Jun 2016 20:57:33 -0500
+
+gmp (2:6.1.0+dfsg-2) unstable; urgency=medium
+
+  * libgmp10.symbols: mark __gmpn_clz_tab as optional -- it is
+    architecture dependent and just changed from defined to undefined for
+    armel and armhf.
+
+ -- Steve M. Robbins <smr@debian.org>  Tue, 17 Nov 2015 05:12:15 -0600
+
+gmp (2:6.1.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream.
+    - patches/arm-asm-nothumb.patch:
+    - patches/4a6d258b467f.patch: Remove.  Applied upstream.
+
+  * libgmp10.symbols: updated for new release.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 15 Nov 2015 11:14:18 -0600
+
+gmp (2:6.0.0+dfsg-7) unstable; urgency=medium
+
+  * control: Drop recommends libstdc++ (Closes: #781196).  Suggest gmp-doc
+    (Closes: #735545).
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 05 Jul 2015 16:51:16 -0500
+
 gmp (2:6.0.0+dfsg-6) unstable; urgency=medium
 
   * Team upload.

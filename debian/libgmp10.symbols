@@ -142,6 +142,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpf_cmp_d@Base 0
  __gmpf_cmp_si@Base 0
  __gmpf_cmp_ui@Base 0
+ __gmpf_cmp_z@Base 2:6.1.0
  __gmpf_div@Base 0
  __gmpf_div_2exp@Base 0
  __gmpf_div_ui@Base 0
@@ -268,7 +269,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_brootinv@Base 2:5.1.1
  __gmpn_bsqrt@Base 2:5.1.1
  __gmpn_bsqrtinv@Base 2:5.1.1
- (arch=alpha armel armhf mips mipsel mips64 mips64el s390x sparc sparc64 sh4 any-i386)__gmpn_clz_tab@Base 0
+ (optional)__gmpn_clz_tab@Base 0
  __gmpn_cmp@Base 0
  __gmpn_cnd_add_n@Base 2:6.0.0
  (arch=any-i386)__gmpn_cnd_add_n_atom@Base 2:5.1.1
@@ -280,6 +281,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_cnd_sub_n_init@Base 2:5.1.1
  (arch=any-i386)__gmpn_cnd_sub_n_pentium4_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_cnd_sub_n_x86@Base 2:5.1.1
+ __gmpn_cnd_swap@Base 2:6.1.0
  __gmpn_com@Base 0
  (arch=any-i386)__gmpn_com_fat@Base 2:5.1.1
  (arch=any-i386)__gmpn_com_init@Base 2:5.1.1
@@ -628,6 +630,8 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_sqr_basecase_pentium@Base 2:5.1.1
  (arch=any-i386)__gmpn_sqr_basecase_x86@Base 2:5.1.1
  (arch=!arm64 !armel !armhf !hppa !mips !mipsel !mips64 !mips64el !m68k !ppc64 !ppc64el !s390x !sh4 !sparc !sparc64 !any-i386)__gmpn_sqr_diag_addlsh1@Base 2:6.0.0
+ __gmpn_sqrlo@Base 2:6.1.0
+ __gmpn_sqrlo_basecase@Base 2:6.1.0
  __gmpn_sqrmod_bnm1@Base 0
  __gmpn_sqrmod_bnm1_next_size@Base 0
  __gmpn_sqrtrem@Base 0
@@ -711,6 +715,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_xnor_n@Base 0
  __gmpn_xor_n@Base 0
  __gmpn_zero@Base 0
+ __gmpn_zero_p@Base 2:6.1.0
  __gmpq_abs@Base 0
  __gmpq_add@Base 0
  __gmpq_canonicalize@Base 0
@@ -719,6 +724,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpq_cmp@Base 0
  __gmpq_cmp_si@Base 0
  __gmpq_cmp_ui@Base 0
+ __gmpq_cmp_z@Base 2:6.1.0
  __gmpq_div@Base 0
  __gmpq_div_2exp@Base 0
  __gmpq_equal@Base 0

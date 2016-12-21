@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-ORIG_SRC_VERSION = 6.0.0
+ORIG_SRC_VERSION = 6.1.2
 
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
@@ -86,7 +86,7 @@ get-orig-source: gmp-$(ORIG_SRC_VERSION).tar.xz
 	rm -rf gmp-$(ORIG_SRC_VERSION)+dfsg gmp-doc-$(ORIG_SRC_VERSION)
 
 gmp-$(ORIG_SRC_VERSION).tar.xz:
-	wget ftp://ftp.gnu.org/gnu/gmp/$@
+	wget https://gmplib.org/download/gmp/$@
 
 configure: configure-stamp
 configure-stamp:
