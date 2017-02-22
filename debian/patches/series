@@ -1,3 +1,2 @@
-s390x.patch
-upstream-dcpi1_bdiv_q.patch
-arm-thumb2-support.patch
+arm-asm-nothumb.patch
+4a6d258b467f.patch
