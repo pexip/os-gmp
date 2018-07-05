@@ -9,7 +9,7 @@ XSBC-Pexip-Original-Uploaders: Steve M. Robbins <smr@debian.org>
 Vcs-Svn: svn://svn.debian.org/svn/debian-science/packages/gmp/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/debian-science/packages/gmp/trunk/
 Standards-Version: 3.9.5
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: libgmp10
 Section: libs
