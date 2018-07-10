@@ -1,3 +1,9 @@
+gmp (2:6.1.2+dfsg-1pexip1) pexip; urgency=medium
+
+  * Migrate to Stretch
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 10:55:18 +0000
+
 gmp (2:6.1.2+dfsg-1) unstable; urgency=medium
 
   * New upstream.
