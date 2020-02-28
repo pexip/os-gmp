@@ -1,3 +1,9 @@
+gmp (2:6.1.2+dfsg-4pexip1) pexip; urgency=medium
+
+  * Migrate to Buster
+
+ -- Vincent Sanders <vince@pexip.com>  Fri, 28 Feb 2020 22:02:12 +0000
+
 gmp (2:6.1.2+dfsg-4) unstable; urgency=medium
 
   * Team Upload.
