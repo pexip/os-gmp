@@ -1,3 +1,16 @@
+gmp (2:6.1.2+dfsg-4+deb10u1pexip1) pexip; urgency=medium
+
+  * New upstream release
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Mon, 28 Mar 2022 14:55:54 +0100
+
+gmp (2:6.1.2+dfsg-4+deb10u1) buster; urgency=medium
+
+  * [1f4ce6d] Add .gitlab-ci.yml
+  * [df6d314] Avoid bit size overflows. CVE-2021-43618
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 23 Nov 2021 21:09:08 +0100
+
 gmp (2:6.1.2+dfsg-4pexip2) pexip; urgency=medium
 
   * Rebuild in buster environment
