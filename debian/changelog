@@ -1,15 +1,68 @@
+gmp (2:6.2.1+dfsg-1+deb11u1) bullseye; urgency=medium
+
+  * [ba91bc2] Add .gitlab-ci.yml
+  * [a848ad6] Avoid bit size overflows. CVE-2021-43618
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 23 Nov 2021 21:37:19 +0100
+
+gmp (2:6.2.1+dfsg-1) unstable; urgency=medium
+
+  [ Steve Robbins ]
+  * [3be3321] New upstream version 6.2.1
+  * [e5fcd68] Use debhelper 13.
+  * [bb9a2bf] Remove  DH_COMPAT=6 used on dh_installchangelogs
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 15 Nov 2020 12:04:37 -0600
+
+gmp (2:6.2.0+dfsg-6) unstable; urgency=medium
+
+  * Revert (2:6.2.0+dfsg-5) changes as multi-arch libs should be used instead.
+    See continued discussion in 950645.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 14 Jun 2020 19:03:25 -0500
+
+gmp (2:6.2.0+dfsg-5) unstable; urgency=medium
+
+  * Team Upload.
+  * add lib64 for i386 x32 mipsel etc, 
+    to support gcc host64 and target32 (Closes: 950645)
+
+ -- YunQiang Su <syq@debian.org>  Thu, 14 May 2020 13:49:24 +0800
+
+gmp (2:6.2.0+dfsg-4) unstable; urgency=medium
+
+  [ Steve Robbins ]
+  * Add breaks for packages known to be broken by GMP 6.2.0.  Closes: #950608.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 23 Feb 2020 21:06:28 -0600
+
+gmp (2:6.2.0+dfsg-3) unstable; urgency=medium
+
+  * Upload 6.2.0 to unstable.  Closes: #949380.
+  * Update symbols
+
+ -- Steve M. Robbins <smr@debian.org>  Fri, 31 Jan 2020 20:16:16 -0600
+
+gmp (2:6.2.0+dfsg-2) experimental; urgency=medium
+
+  [ Steve Robbins ]
+  * Replace explicit assignment of architecture-dependent DEB_ variables 
+    by including architecture.mk.
+  * Update symbols file.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 26 Jan 2020 09:44:33 -0600
+
+gmp (2:6.2.0+dfsg-1) experimental; urgency=medium
+
+  * New upstream version 6.2.0
+
+ -- Steve M. Robbins <smr@debian.org>  Sat, 25 Jan 2020 21:13:16 -0600
+
 gmp (2:6.1.2+dfsg-4+deb10u1pexip1) pexip; urgency=medium
 
   * New upstream release
 
  -- Steve McIntyre <steve.mcintyre@pexip.com>  Mon, 28 Mar 2022 14:55:54 +0100
-
-gmp (2:6.1.2+dfsg-4+deb10u1) buster; urgency=medium
-
-  * [1f4ce6d] Add .gitlab-ci.yml
-  * [df6d314] Avoid bit size overflows. CVE-2021-43618
-
- -- Anton Gladky <gladk@debian.org>  Tue, 23 Nov 2021 21:09:08 +0100
 
 gmp (2:6.1.2+dfsg-4pexip2) pexip; urgency=medium
 

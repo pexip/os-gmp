@@ -1,9 +1,10 @@
 #!/usr/bin/make -f
 
-ORIG_SRC_VERSION = 6.1.2
+ORIG_SRC_VERSION = 6.2.1
 
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
+include /usr/share/dpkg/architecture.mk
 
 # Uncomment this to turn on verbose mode. 
 #export DH_VERBOSE=1
@@ -15,11 +16,6 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
   NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
   JOBSFLAG = -j$(NUMJOBS)
 endif
-
-DEB_HOST_ARCH  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-export DEB_HOST_GNU_TYPE  := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-export DEB_BUILD_GNU_TYPE := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
-export DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 MAKE_CHECK = : disabled make check
 ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
@@ -126,6 +122,7 @@ install: build-stamp install-prep
 
 	dh_install -plibgmp-dev usr/lib/*/lib*.so
 	dh_install -plibgmp-dev usr/lib/*/lib*.a
+	dh_install -plibgmp-dev usr/lib/*/pkgconfig
 	dh_install -plibgmp-dev usr/include
 
 	# Install upstream ChangeLog, AUTHORS, NEWS, and README only in -dev package
@@ -141,8 +138,7 @@ binary-common:
 	sed -i "/dependency_libs/ s/'.*'/''/" `find debian/ -name '*.la'`
 	dh_testdir
 	dh_testroot
-	# User lower compatibility to avoid installing upstream changelog in all packages
-	DH_COMPAT=6 dh_installchangelogs
+	dh_installchangelogs
 	dh_installdocs
 	dh_installexamples
 	dh_installmenu

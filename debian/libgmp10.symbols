@@ -1,3 +1,4 @@
+# SymbolsHelper-Confirmed: 2:6.2.0 amd64 arm64 hppa hurd-i386 i386 ia64 kfreebsd-i386 powerpc ppc64 riscv64 s390x sh4 sparc64
 libgmp.so.10 libgmp10 #MINVER#
 * Build-Depends-Package: libgmp-dev
  (arch=ppc64).__gmpn_add_n@Base 2:5.1.1
@@ -8,6 +9,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=ppc64).__gmpn_and_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_andn_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_bdiv_dbm1c@Base 2:5.1.1
+ (arch=ppc64).__gmpn_bdiv_q_1@Base 2:6.2.0
  (arch=ppc64).__gmpn_cnd_add_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_cnd_sub_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_com@Base 2:5.1.1
@@ -16,7 +18,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=ppc64).__gmpn_divexact_1@Base 2:5.1.1
  (arch=ppc64).__gmpn_divrem_1@Base 2:5.1.1
  (arch=ppc64).__gmpn_divrem_2@Base 2:5.1.1
- (arch=ppc64).__gmpn_gcd_1@Base 2:5.1.1
+ (arch=ppc64).__gmpn_gcd_11@Base 2:6.2.0
  (arch=ppc64).__gmpn_invert_limb@Base 2:5.1.1
  (arch=ppc64).__gmpn_ior_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_iorn_n@Base 2:5.1.1
@@ -33,6 +35,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=ppc64).__gmpn_mul_basecase@Base 2:5.1.1
  (arch=ppc64).__gmpn_nand_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_nior_n@Base 2:5.1.1
+ (arch=ppc64).__gmpn_pi1_bdiv_q_1@Base 2:6.2.0
  (arch=ppc64).__gmpn_rsblsh1_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_rsblsh2_n@Base 2:5.1.1
  (arch=ppc64).__gmpn_rsh1add_n@Base 2:5.1.1
@@ -224,9 +227,9 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_add_nc_pentium@Base 2:5.1.1
  (arch=any-i386)__gmpn_add_nc_x86@Base 2:5.1.1
  (arch=any-amd64)__gmpn_addaddmul_1msb0@Base 0
- (arch=!arm64 !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !riscv64 !sparc !sparc64 !sh3 !sh4 !tilegx)__gmpn_addlsh1_n@Base 0
+ (arch=!hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !riscv64 !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_addlsh1_n@Base 2:6.2.0
  (arch=any-i386)__gmpn_addlsh1_n_init@Base 2:5.1.1
- (arch=!arm64 !armel !armhf !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_addlsh2_n@Base 0
+ (arch=!armel !armhf !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_addlsh2_n@Base 2:6.2.0
  (arch=any-i386)__gmpn_addlsh2_n_init@Base 2:5.1.1
  (arch=any-amd64)__gmpn_addlsh_n@Base 0
  __gmpn_addmul_1@Base 0
@@ -245,8 +248,9 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_addmul_1c_p6_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_addmul_1c_pentium4_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_addmul_1c_pentium@Base 2:5.1.1
- (arch=any-i386)__gmpn_addmul_2_init@Base 2:5.1.1
  (arch=any-i386 any-amd64 ia64)__gmpn_addmul_2@Base 0
+ (arch=any-i386)__gmpn_addmul_2_init@Base 2:5.1.1
+ (arch=ia64)__gmpn_addmul_2s@Base 2:6.2.0
  __gmpn_and_n@Base 0
  __gmpn_andn_n@Base 0
  __gmpn_bases@Base 0
@@ -269,7 +273,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_brootinv@Base 2:5.1.1
  __gmpn_bsqrt@Base 2:5.1.1
  __gmpn_bsqrtinv@Base 2:5.1.1
- (optional)__gmpn_clz_tab@Base 0
+ (arch=hurd-i386 i386 kfreebsd-i386 riscv64 s390x sh4 sparc64)__gmpn_clz_tab@Base 2:6.2.0
  __gmpn_cmp@Base 0
  __gmpn_cnd_add_n@Base 2:6.0.0
  (arch=any-i386)__gmpn_cnd_add_n_atom@Base 2:5.1.1
@@ -288,6 +292,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_com_k6_mmx@Base 2:5.1.1
  (arch=any-i386)__gmpn_com_k7_mmx@Base 2:5.1.1
  (arch=any-i386)__gmpn_com_pentium@Base 2:5.1.1
+ __gmpn_compute_powtab@Base 2:6.2.0
  __gmpn_copyd@Base 0
  (arch=any-i386)__gmpn_copyd_atom_mmx@Base 2:5.1.1
  (arch=any-i386)__gmpn_copyd_init@Base 2:5.1.1
@@ -312,8 +317,6 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_cpuvec_initialized@Base 2:5.1.1
  __gmpn_dc_set_str@Base 0
  __gmpn_dcpi1_bdiv_q@Base 0
- __gmpn_dcpi1_bdiv_q_n@Base 0
- __gmpn_dcpi1_bdiv_q_n_itch@Base 0
  __gmpn_dcpi1_bdiv_qr@Base 0
  __gmpn_dcpi1_bdiv_qr_n@Base 0
  __gmpn_dcpi1_bdiv_qr_n_itch@Base 0
@@ -321,7 +324,6 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_dcpi1_div_qr@Base 0
  __gmpn_dcpi1_div_qr_n@Base 0
  __gmpn_dcpi1_divappr_q@Base 0
- __gmpn_dcpi1_divappr_q_n@Base 0
  __gmpn_div_q@Base 0
  __gmpn_div_qr_1@Base 2:6.0.0
  __gmpn_div_qr_1n_pi1@Base 2:6.0.0
@@ -362,13 +364,15 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_fft_best_k@Base 0
  __gmpn_fft_next_size@Base 0
  __gmpn_fib2_ui@Base 0
+ __gmpn_fib2m@Base 2:6.2.0
  __gmpn_gcd@Base 0
+ __gmpn_gcd_11@Base 2:6.2.0
+ (arch=hurd-i386 i386 kfreebsd-i386)__gmpn_gcd_11_init@Base 2:6.2.0
+ (arch=hurd-i386 i386 kfreebsd-i386)__gmpn_gcd_11_k7@Base 2:6.2.0
+ (arch=hurd-i386 i386 kfreebsd-i386)__gmpn_gcd_11_p6@Base 2:6.2.0
+ (arch=hurd-i386 i386 kfreebsd-i386)__gmpn_gcd_11_x86@Base 2:6.2.0
  __gmpn_gcd_1@Base 0
- (arch=any-i386)__gmpn_gcd_1_fat@Base 2:5.1.1
- (arch=any-i386)__gmpn_gcd_1_init@Base 2:5.1.1
- (arch=any-i386)__gmpn_gcd_1_k6@Base 2:5.1.1
- (arch=any-i386)__gmpn_gcd_1_k7@Base 2:5.1.1
- (arch=any-i386)__gmpn_gcd_1_p6@Base 2:5.1.1
+ __gmpn_gcd_22@Base 2:6.2.0
  __gmpn_gcd_subdiv_step@Base 0
  __gmpn_gcdext@Base 0
  __gmpn_gcdext_1@Base 0
@@ -419,7 +423,6 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_matrix22_mul1_inverse_vector@Base 2:5.1.1
  __gmpn_matrix22_mul@Base 0
  __gmpn_matrix22_mul_itch@Base 0
- __gmpn_matrix22_mul_strassen@Base 0
  __gmpn_mod_1@Base 0
  __gmpn_mod_1_1p@Base 0
  (arch=any-i386)__gmpn_mod_1_1p_atom_sse2@Base 2:5.1.1
@@ -468,7 +471,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_mod_34lsub1_pentium4_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_mod_34lsub1_pentium@Base 2:5.1.1
  (arch=any-i386)__gmpn_mod_34lsub1_x86@Base 2:5.1.1
- (arch=any-amd64 powerpcspe)__gmpn_modexact_1_odd@Base 0
+ (arch=amd64 any-amd64 powerpc powerpcspe)__gmpn_modexact_1_odd@Base 2:6.2.0
  (arch=any-i386)__gmpn_modexact_1_odd_atom@Base 2:5.1.1
  (arch=any-i386)__gmpn_modexact_1_odd_k6@Base 2:5.1.1
  (arch=any-i386)__gmpn_modexact_1_odd_k7@Base 2:5.1.1
@@ -491,10 +494,8 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_mu_div_q@Base 0
  __gmpn_mu_div_q_itch@Base 0
  __gmpn_mu_div_qr@Base 0
- __gmpn_mu_div_qr_choose_in@Base 0
  __gmpn_mu_div_qr_itch@Base 0
  __gmpn_mu_divappr_q@Base 0
- __gmpn_mu_divappr_q_choose_in@Base 0
  __gmpn_mu_divappr_q_itch@Base 0
  __gmpn_mul@Base 0
  __gmpn_mul_1@Base 0
@@ -507,7 +508,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_mul_1_pentium@Base 2:5.1.1
  (arch=any-i386)__gmpn_mul_1_pentium_mmx@Base 2:5.1.1
  (arch=any-i386)__gmpn_mul_1_x86@Base 2:5.1.1
- (arch=!arm64 !armel !armhf !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_mul_1c@Base 0
+ (arch=!any-i386 !armel !armhf !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_mul_1c@Base 2:6.2.0
  (arch=any-i386)__gmpn_mul_1c_atom_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_mul_1c_k6@Base 2:5.1.1
  (arch=any-i386)__gmpn_mul_1c_k7@Base 2:5.1.1
@@ -548,7 +549,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_pow_1@Base 0
  __gmpn_powlo@Base 0
  __gmpn_powm@Base 0
- (arch=!m68k !ppc64 !ppc64el !tilegx)__gmpn_preinv_divrem_1@Base 0
+ (arch=!m68k !ppc64 !ppc64el !s390x !tilegx)__gmpn_preinv_divrem_1@Base 0
  (arch=any-i386)__gmpn_preinv_divrem_1_atom_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_preinv_divrem_1_init@Base 2:5.1.1
  (arch=any-i386)__gmpn_preinv_divrem_1_k7_mmx@Base 2:5.1.1
@@ -559,7 +560,6 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_preinv_mod_1_k6@Base 2:5.1.1
  __gmpn_preinv_mu_div_qr@Base 0
  __gmpn_preinv_mu_div_qr_itch@Base 0
- __gmpn_preinv_mu_divappr_q@Base 0
  __gmpn_random2@Base 0
  __gmpn_random@Base 0
  __gmpn_redc_1@Base 0
@@ -571,12 +571,12 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_redc_n@Base 0
  __gmpn_remove@Base 0
  __gmpn_rootrem@Base 0
- (arch=!alpha !arm64 !armel !armhf !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !riscv64 !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsblsh1_n@Base 0
- (arch=!alpha !arm64 !armel !armhf !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsblsh2_n@Base 0
+ (arch=!alpha !any-i386 !armel !armhf !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !powerpc !powerpcspe !riscv64 !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_rsblsh1_n@Base 2:6.2.0
+ (arch=!alpha !any-i386 !armel !armhf !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_rsblsh2_n@Base 2:6.2.0
  (arch=!alpha !arm64 !armel !armhf !hppa !ia64 !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !ppc64 !ppc64el !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsblsh_n@Base 0
- (arch=!alpha !arm64 !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsh1add_n@Base 0
+ (arch=!alpha !any-i386 !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_rsh1add_n@Base 2:6.2.0
  (arch=!alpha !arm64 !armel !armhf !hppa !ia64 !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !ppc64 !ppc64el !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsh1add_nc@Base 0
- (arch=!alpha !arm64 !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsh1sub_n@Base 0
+ (arch=!alpha !any-i386 !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !powerpc !powerpcspe !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_rsh1sub_n@Base 2:6.2.0
  (arch=!alpha !arm64 !armel !armhf !hppa !ia64 !mips !mipsel !mips64 !mips64el !m68k !nios2 !powerpc !powerpcspe !ppc64 !ppc64el !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_rsh1sub_nc@Base 0
  __gmpn_rshift@Base 0
  (arch=any-i386)__gmpn_rshift_atom@Base 2:5.1.1
@@ -591,6 +591,7 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_rshift_x86@Base 2:5.1.1
  __gmpn_sbpi1_bdiv_q@Base 0
  __gmpn_sbpi1_bdiv_qr@Base 0
+ __gmpn_sbpi1_bdiv_r@Base 2:6.2.0
  __gmpn_sbpi1_div_q@Base 0
  __gmpn_sbpi1_div_qr@Base 0
  __gmpn_sbpi1_divappr_q@Base 0
@@ -616,7 +617,6 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpn_sec_sub_1_itch@Base 2:6.0.0
  __gmpn_sec_tabselect@Base 2:6.0.0
  __gmpn_set_str@Base 0
- __gmpn_set_str_compute_powtab@Base 0
  __gmpn_sizeinbase@Base 2:6.0.0
  __gmpn_sqr@Base 0
  __gmpn_sqr_basecase@Base 0
@@ -629,12 +629,14 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_sqr_basecase_pentium4_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_sqr_basecase_pentium@Base 2:5.1.1
  (arch=any-i386)__gmpn_sqr_basecase_x86@Base 2:5.1.1
- (arch=!arm64 !armel !armhf !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !ppc64 !ppc64el !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx !any-i386)__gmpn_sqr_diag_addlsh1@Base 2:6.0.0
+ (arch=!any-i386 !armel !armhf !hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !ppc64 !ppc64el !riscv64 !s390x !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_sqr_diag_addlsh1@Base 2:6.2.0
+ (arch=hppa)__gmpn_sqr_diagonal@Base 2:6.2.0
  __gmpn_sqrlo@Base 2:6.1.0
  __gmpn_sqrlo_basecase@Base 2:6.1.0
  __gmpn_sqrmod_bnm1@Base 0
  __gmpn_sqrmod_bnm1_next_size@Base 0
  __gmpn_sqrtrem@Base 0
+ __gmpn_strongfibo@Base 2:6.2.0
  __gmpn_sub@Base 0
  __gmpn_sub_1@Base 0
  __gmpn_sub_err1_n@Base 2:5.1.1
@@ -657,9 +659,9 @@ libgmp.so.10 libgmp10 #MINVER#
  (arch=any-i386)__gmpn_sub_nc_pentium4_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_sub_nc_pentium@Base 2:5.1.1
  (arch=any-i386)__gmpn_sub_nc_x86@Base 2:5.1.1
- (arch=!arm64 !hppa !mips !mipsel !mips64 !mips64el !m68k !nios2 !riscv64 !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_sublsh1_n@Base 0
+ (arch=!hppa !m68k !mips !mips64 !mips64el !mipsel !nios2 !riscv64 !sh3 !sh4 !sparc !sparc64 !tilegx)__gmpn_sublsh1_n@Base 2:6.2.0
  (arch=any-i386)__gmpn_sublsh1_n_init@Base 2:5.1.1
- (arch=alpha ia64 ppc64 ppc64el)__gmpn_sublsh2_n@Base 2:5.1.1
+ (arch=alpha arm64 ia64 ppc64 ppc64el)__gmpn_sublsh2_n@Base 2:6.2.0
  __gmpn_submul_1@Base 0
  (arch=any-i386)__gmpn_submul_1_atom_sse2@Base 2:5.1.1
  (arch=any-i386)__gmpn_submul_1_init@Base 2:5.1.1
@@ -846,6 +848,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpz_limbs_modify@Base 2:6.0.0
  __gmpz_limbs_read@Base 2:6.0.0
  __gmpz_limbs_write@Base 2:6.0.0
+ __gmpz_lucas_mod@Base 2:6.2.0
  __gmpz_lucnum2_ui@Base 0
  __gmpz_lucnum_ui@Base 0
  __gmpz_mfac_uiui@Base 2:5.1.1
@@ -895,6 +898,7 @@ libgmp.so.10 libgmp10 #MINVER#
  __gmpz_sizeinbase@Base 0
  __gmpz_sqrt@Base 0
  __gmpz_sqrtrem@Base 0
+ __gmpz_stronglucas@Base 2:6.2.0
  __gmpz_sub@Base 0
  __gmpz_sub_ui@Base 0
  __gmpz_submul@Base 0
