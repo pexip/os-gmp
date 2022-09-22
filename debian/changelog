@@ -1,9 +1,58 @@
-gmp (2:6.2.1+dfsg-1+deb11u1) bullseye; urgency=medium
+gmp (2:6.2.1+dfsg1-1.1) unstable; urgency=medium
 
-  * [ba91bc2] Add .gitlab-ci.yml
-  * [a848ad6] Avoid bit size overflows. CVE-2021-43618
+  * Non-maintainer upload by the Reproducible Builds team.
+  * debian/rules changes by Vagrant Cascadian:
+    - pass ASMFLAGS with debug-prefix-map to configure.
+    - replace embedded build path in gmp.h with a placeholder string.
+    Closes: #1009931
 
- -- Anton Gladky <gladk@debian.org>  Tue, 23 Nov 2021 21:37:19 +0100
+ -- Holger Levsen <holger@debian.org>  Thu, 22 Sep 2022 20:43:57 +0200
+
+gmp (2:6.2.1+dfsg1-1) unstable; urgency=medium
+
+  [ Bastian Germann ]
+  * [6c4ffc2] Remove field Priority on binary packages
+              libgmp10, libgmpxx4ldbl that duplicates source.
+  * [8bbe5e5] d/copyright: Convert to machine-readable format
+  * [08c667c] d/rules: Move to debhelper shared option -a
+  * [d4b328d] d/watch: Add repacksuffix
+  * [8d2e18e] Repack the source via Files-Excluded
+
+  [ Anton Gladky ]
+  * [9ff6e5c] Repack upstream version 6.2.1+dfsg1, excluding doc/
+  * [ca5c701] Minor fixes in d/control, d/copyright
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 12 Jun 2022 22:56:17 +0200
+
+gmp (2:6.2.1+dfsg-3) unstable; urgency=medium
+
+  * [2da3c94] Avoid bit size overflows. CVE-2021-43618. (Closes: #994405)
+  * [0f172aa] Trim trailing whitespace.
+  * [116e367] Update watch file format version to 4.
+  * [a1c3867] Use secure URI in Homepage field.
+  * [7f358d8] Set debhelper-compat version in Build-Depends.
+  * [42336e5] Remove Section on libgmp10,
+              Section on libgmpxx4ldbl,
+              Priority on libgmp-dev,
+              Priority on libgmp10-doc,
+              Priority on libgmp3-dev that duplicate source.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 15 Nov 2021 22:28:20 +0100
+
+gmp (2:6.2.1+dfsg-2) unstable; urgency=medium
+
+  * Upload into unstable.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 09 Sep 2021 21:11:53 +0200
+
+gmp (2:6.2.1+dfsg-2~exp1) experimental; urgency=medium
+
+  * Drop symbols-file to make the work of porters easier.
+    (Closes: #984744, #989440, #788411)
+  * [05e73e2] Add myself as uploader
+  * Add autopkgtests.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 07 Sep 2021 21:42:39 +0200
 
 gmp (2:6.2.1+dfsg-1) unstable; urgency=medium
 
@@ -24,7 +73,7 @@ gmp (2:6.2.0+dfsg-6) unstable; urgency=medium
 gmp (2:6.2.0+dfsg-5) unstable; urgency=medium
 
   * Team Upload.
-  * add lib64 for i386 x32 mipsel etc, 
+  * add lib64 for i386 x32 mipsel etc,
     to support gcc host64 and target32 (Closes: 950645)
 
  -- YunQiang Su <syq@debian.org>  Thu, 14 May 2020 13:49:24 +0800
@@ -46,7 +95,7 @@ gmp (2:6.2.0+dfsg-3) unstable; urgency=medium
 gmp (2:6.2.0+dfsg-2) experimental; urgency=medium
 
   [ Steve Robbins ]
-  * Replace explicit assignment of architecture-dependent DEB_ variables 
+  * Replace explicit assignment of architecture-dependent DEB_ variables
     by including architecture.mk.
   * Update symbols file.
 
@@ -211,7 +260,7 @@ gmp (2:6.0.0+dfsg-2) unstable; urgency=medium
 gmp (2:6.0.0+dfsg-1) unstable; urgency=medium
 
   * New upstream.  Closes: #742564.
-  
+
   * copyright: Updated to reflect new dual-licensing (LGPLv3+ or GPLv2+).
     Closes: #741607.
 
@@ -220,12 +269,12 @@ gmp (2:6.0.0+dfsg-1) unstable; urgency=medium
 gmp (2:5.1.3+dfsg-1) unstable; urgency=low
 
   * New upstream.
-  
+
   * patches/preserve-ia64-registers.patch:
   * patches/mpn_sbpi1_div.patch: Remove.  Applied upstream.
 
   * control: Update Standards-Version to 3.9.5.
-  
+
   * watch: New watch file from bartm.
 
  -- Steve M. Robbins <smr@debian.org>  Sat, 14 Dec 2013 14:51:41 -0600
@@ -234,7 +283,7 @@ gmp (2:5.1.2+dfsg-3) unstable; urgency=low
 
   * patches/mpn_sbpi1_div.patch: New.  Upstream patch to fix computation
     of mpn_sbpi1_div_qr_sec and mpn_sbpi1_div_r_sec.
-  
+
   * Remove lib32gmp* packages.  Closes: #714998.
 
  -- Steve M. Robbins <smr@debian.org>  Sat, 14 Sep 2013 13:52:27 -0500
@@ -246,7 +295,7 @@ gmp (2:5.1.2+dfsg-2) unstable; urgency=low
     Closes: #675577.
 
   * rules(lib32gmp-dev): Don't ship libtool .la files.
-  
+
   * Remove lib64gmp* packages.
 
  -- Steve M. Robbins <smr@debian.org>  Sun, 30 Jun 2013 22:38:49 -0500
@@ -255,7 +304,7 @@ gmp (2:5.1.2+dfsg-1) unstable; urgency=low
 
   * New upstream.
     - reduced SQR_TOOM2_THRESHOLD to 30.  Closes: #706984.
-  
+
   * patches/preserve-ia64-registers.patch: New.  Upstream patch to
     preserve registers.  Closes: #708264.
 
@@ -270,7 +319,7 @@ gmp (2:5.1.1+dfsg-3) unstable; urgency=low
 gmp (2:5.1.1+dfsg-2) experimental; urgency=low
 
   * rules: Need to set ABI=x32 at configure time.  Closes: #698000.
-  
+
   * Change to source format 3.0 (quilt).
 
  -- Steve M. Robbins <smr@debian.org>  Sun, 17 Mar 2013 21:54:08 -0500
@@ -279,7 +328,7 @@ gmp (2:5.1.1+dfsg-1) experimental; urgency=low
 
   * New upstream.
     - added support for x32.  Closes: #698000.
-  
+
   * fix-gmp.sh: Add support for __aarch64__ (closes: #693467).
 
  -- Steve M. Robbins <smr@debian.org>  Mon, 18 Feb 2013 18:01:16 -0600
@@ -287,8 +336,8 @@ gmp (2:5.1.1+dfsg-1) experimental; urgency=low
 gmp (2:5.1.0+dfsg-1) experimental; urgency=low
 
   * New upstream.
-  
-  * rules: Use hardening build flags.  
+
+  * rules: Use hardening build flags.
 
   * control: Update to debhelper compat level 9.
 
@@ -298,7 +347,7 @@ gmp (2:5.0.5+dfsg-2) unstable; urgency=low
 
   * Revert to FAT binary situation of 5.0.4: disabled for amd64,
     kfreebsd-amd64, and lpia; enabled for all other architectures.
-  
+
   * control: Mark libgmp-dev as "Multi-arch: same", requested by Wookey
     http://lists.alioth.debian.org/pipermail/debian-science-maintainers/2012-May/013386.html
 
@@ -315,7 +364,7 @@ gmp (2:5.0.5+dfsg-1.1) unstable; urgency=low
 gmp (2:5.0.5+dfsg-1) unstable; urgency=low
 
   * New upstream.
-  
+
   * rules: Always built FAT binary, on advice from upstream.  By default,
     GMP compiles for the CPU it detect at configure time.  But with
     --enable-fat it detects the CPU at run time.  This is important for
@@ -329,13 +378,13 @@ gmp (2:5.0.4+dfsg-1) unstable; urgency=low
     - Fix for buffer overruns.  Closes: #658821.
 
   * rules: add build-arch, build-indep rules.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Sat, 11 Feb 2012 11:41:31 -0600
 
 gmp (2:5.0.3+dfsg-1) unstable; urgency=low
 
   * New upstream version.  Supports s390x.
-  
+
   * patches/s390x.patch: Remove.
   * patches/upstream-dcpi1_bdiv_q.patch: Remove.  Applied upstream.
 
@@ -344,7 +393,7 @@ gmp (2:5.0.3+dfsg-1) unstable; urgency=low
 gmp (2:5.0.2+dfsg-2) unstable; urgency=low
 
   * gmp.h: Add case for s390x.
-  
+
   * control: Add Breaks relations from libgmp-dev to force upgrade of
     packages that relied on libgmp.la (thanks, Jonathan Nieder).  Closes:
     #645475.
@@ -358,14 +407,14 @@ gmp (2:5.0.2+dfsg-2) unstable; urgency=low
 gmp (2:5.0.2+dfsg-1) unstable; urgency=low
 
   * New upstream version.  Closes: #627012.
-  
+
   * rules: Empty dependency_libs.  Closes: #633312.
-  
-  * orig-source.patch: New.  
-  * patches/s390x.patch: New. 
+
+  * orig-source.patch: New.
+  * patches/s390x.patch: New.
   * rules: Patches to enable building on s390x (thanks, Andreas Krebbel).
     Closes: #635461.
-  
+
   * patches/upstream-dcpi1_bdiv_q.patch.  New.  Upstream fix: There is a
     GMP bug in mpn/generic/dcpi1_bdiv_q.c that causes incorrect
     computation with extremely low probability, for unnormalised
@@ -374,7 +423,7 @@ gmp (2:5.0.2+dfsg-1) unstable; urgency=low
     several user-level routines, e.g., mpz_invert, but only for operands
     of at least 3000 bits (for smaller operands, a simpler algorithm is
     used).
-  
+
   * control:
   * rules: Apply patch (thanks, Riku Voipio) for multiarch, except we do
     not mark libgmp-dev as multiarch.  Closes: #638959.
@@ -400,7 +449,7 @@ gmp (2:5.0.1+dfsg-7) unstable; urgency=low
     dummy package to pull in libgmp-dev.  Required to ease transition of
     mlton because it build-depends on itself and on versioned libgmp3-dev.
     See http://lists.debian.org/debian-release/2011/03/msg00374.html.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Tue, 22 Mar 2011 22:00:03 -0500
 
 gmp (2:5.0.1+dfsg-6) unstable; urgency=low
@@ -418,10 +467,10 @@ gmp (2:5.0.1+dfsg-5) unstable; urgency=low
 
   * Package libgmp10-dev also provides libgmp-dev so you can build-depend
     on an unversioned GMP -dev package.
-  
+
   * Remove archaic MP compatibility library (libmp3 and 32/64-bit
     variants).
-  
+
   * control: Set Standards-Version to 3.9.1.
     - rules: don't build with -D_REENTRANT
 
@@ -438,13 +487,13 @@ gmp (2:5.0.1+dfsg-3) experimental; urgency=low
 
   [ Sylvestre Ledru ]
   * Package moved to Debian Science.
-  
-  * gmp.h: Add support for __m68k__ (thanks, Thorsten Glaser).  
+
+  * gmp.h: Add support for __m68k__ (thanks, Thorsten Glaser).
     Closes: #601287.
-  
+
   * libgmp3-doc.examples:
   * libgmp3-doc.README.Debian: Rename to libgmp10-doc.xxx.
-  
+
   * libgmp3.prerm: Remove obsolete file.  Was used to remove /usr/doc/xxx
     symlinks from back at the time of the /usr/doc --> /usr/share/doc
     transition.
@@ -453,7 +502,7 @@ gmp (2:5.0.1+dfsg-3) experimental; urgency=low
 
 gmp (2:5.0.1+dfsg-2) experimental; urgency=low
 
-  * control: 
+  * control:
   * rules: New packages libmp3, lib32mp3, lib64mp3.  Split library mp
     out from the libgmp package as they have evolved to use different
     major numbers now.  Make libgmp10-dev conflict & replace libgmp3-dev
@@ -464,7 +513,7 @@ gmp (2:5.0.1+dfsg-2) experimental; urgency=low
 gmp (2:5.0.1+dfsg-1) experimental; urgency=low
 
   * New upstream release.  Library gmp SOVERSION bumped from 3 to 10.
-  
+
   * control: New packages (libgmp10, libgmp10-dev, etc) replace
     corresponding packages due to SOVERSION change.  Drop some
     now-obsolete conflicts on libgmp3 and libgmp2 pacakges.
@@ -515,13 +564,13 @@ gmp (2:4.3.1+dfsg-1) unstable; urgency=low
 
   * New upstream.
     - Incorporate previous NMU patch.  Closes: #528923.
-    - Remote patches applied upstream: mpf_eq.diff, mpf_set_str.c.4.diff, 
+    - Remote patches applied upstream: mpf_eq.diff, mpf_set_str.c.4.diff,
       perfpow.c.diff
     - Upstream includes fix for scanf/sscanffuns.c.  Closes: #523076.
 
   * gmp.h: Add case for SH processor.  Closes: #530747.  Add case for
     AVR32.  Closes: #528511.
-  
+
   * patches/fix-lib-versioning.patch: New.  Fix versioning of shared libs;
     c.f. http://gmplib.org/list-archives/gmp-bugs/2009-May/001475.html.
 
@@ -549,13 +598,13 @@ gmp (2:4.2.4+dfsg-7) experimental; urgency=low
     and #506791.  Build lib64* packages only for powerpc.
 
   * gmp.h: Add case for mips.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Mon, 20 Apr 2009 00:15:56 -0500
 
 gmp (2:4.2.4+dfsg-6) experimental; urgency=low
 
-  * gmp.h: Add cases for arm, hppa, sparc.  
-  
+  * gmp.h: Add cases for arm, hppa, sparc.
+
   * control:
   * rules: Do not build multilibs for i386, powerpc, s390.  Closes:
     #522460.
@@ -564,9 +613,9 @@ gmp (2:4.2.4+dfsg-6) experimental; urgency=low
 
 gmp (2:4.2.4+dfsg-5) experimental; urgency=low
 
-  * rules: Support bi-arch builds (32 and 64 bit) where possible.  
+  * rules: Support bi-arch builds (32 and 64 bit) where possible.
     Closes: #454494, #506791.
-  
+
   * control: Standards-Version 3.8.1; no changes.
 
  -- Steve M. Robbins <smr@debian.org>  Thu, 02 Apr 2009 22:57:14 -0500
@@ -598,7 +647,7 @@ gmp (2:4.2.4+dfsg-2) unstable; urgency=low
 gmp (2:4.2.4+dfsg-1) experimental; urgency=low
 
   * New upstream version.  Closes: #499632.
-  
+
   * Set Standards-Version to 3.8.0; no changes required.
 
  -- Steve M. Robbins <smr@debian.org>  Sun, 21 Sep 2008 00:22:19 -0500
@@ -610,7 +659,7 @@ gmp (2:4.2.3+dfsg-1) experimental; urgency=low
   * debian/patches/01_gmp.h-std-file.diff:
   * debian/patches/02_noexec-stack.diff:
   * debian/patches/03_gnu89-inline.diff: Removed.  Applied upstream.
-  
+
   * debian/README.source: New.  Describe how to use simple patchsys.
 
   * debian/rules: New target get-orig-source.  Target runs autoreconf
@@ -618,34 +667,34 @@ gmp (2:4.2.3+dfsg-1) experimental; urgency=low
     DEB_AUTO_UPDATE_AUTOCONF and DEB_AUTO_UPDATE_AUTOMAKE settings.
   * debian/control: Remove build-dependency on automake, autoconf, and
     libtool.
-  
+
   * Switch to Debian-Scicomp subversion repository.
   * debian/control: Add Vcs-Browser and Vcs-Svn fields.  Change maintainer
     to pkg-scicomp-devel, change uploaders to me.
-  
+
   * debian/rules: Base decision for --disable-fat on DEB_HOST_ARCH_CPU
     instead of DEB_HOST_ARCH, to build on freebsd-amd64.  Closes: #490555.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Sat, 09 Aug 2008 16:43:50 -0500
 
 gmp (2:4.2.2+dfsg-3) unstable; urgency=low
 
   * debian/rules:
-  * debian/control: Move from automake 1.8 to automake 1.9.  
+  * debian/control: Move from automake 1.8 to automake 1.9.
     Closes: #473306.
-  
+
   * debian/patches/03_gnu89-inline.diff: Add gnu_inline function attribute
-    to extern inline functions.  Closes: #430598.  
+    to extern inline functions.  Closes: #430598.
     Patch courtesy of Ludovic Courtès; see
     http://gmplib.org/list-archives/gmp-bugs/2008-April/000980.html.
 
   * debian/rules: Install upstream changelog only in -dev package.
     Closes: #442895.
-  
+
   * debian/control: Replace Source-Version by binary:Version.  Bump
     Standards-Version from 2.7.2 to 2.7.3; no changes required.  Add
     HomePage field.
-  
+
   * debian/copyright: Freshen; include copyright statement.
 
  -- Steve M. Robbins <smr@debian.org>  Wed, 09 Apr 2008 01:15:29 -0500
@@ -675,7 +724,7 @@ gmp (2:4.2.1+dfsg-5) unstable; urgency=low
 
   * debian/control: Rename libgmpxx4 to libgmpxx4ldbl.  Closes: #430253.
   Set Standards-Version to 3.7.2; no changes.
-  
+
   * Apply patch gcc4.3-inline.diff
     (http://gmplib.org/list-archives/gmp-devel/2007-May/000745.html).
     Closes: #431495.
@@ -706,12 +755,12 @@ gmp (2:4.2.1+dfsg-2) unstable; urgency=low
 gmp (2:4.2.1+dfsg-1) unstable; urgency=low
 
   * New upstream.
-  
+
   * Fix SONAME on libgmpxx.  Closes: #368310.
     - introduces package libgmpxx4.
-  
+
   * A test case miscompiles with -O3.  Build with -O2.  Closes: #372563.
-  
+
   * Do not install private headers.  Closes: #363692.
 
  -- Steve M. Robbins <smr@debian.org>  Sun, 18 Jun 2006 21:20:03 -0400
@@ -734,12 +783,12 @@ gmp (4.1.4-11) unstable; urgency=low
 
   * Apply patch for big-endian ARM (thanks, Lennert Buytenhek).
   Closes: #333612.
-  
+
   * Apply patch to turn off executable stack (thanks, Sheplyakov Alexei).
   Closes: #323944.
-  
+
   * Run "autoreconf" to update autotools files.  Closes: #304635.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Thu, 13 Oct 2005 23:13:04 -0400
 
 gmp (4.1.4-10) unstable; urgency=low
@@ -784,7 +833,7 @@ gmp (4.1.4-6) unstable; urgency=low
 
   * mpn/generic/rootrem.c: Fix buffer overrun in mpz_root(), mpz_rootrem().
     Upstream patch: http://www.swox.com/gmp/patches/mpn_rootrem.c.diff
-  
+
   * debian/FAQ: New; taken from http://www.swox.com/gmp.  Explains
     the segfaulting problem.  Closes: #284978.
 
@@ -802,7 +851,7 @@ gmp (4.1.4-4) unstable; urgency=low
   * debian/rules: Don't package gmp-developer docs.
   * debian/README.Debian: Clarify that the primary documentation consists
     of info files.  Closes: #276856.
-  
+
   * debian/control: Suggest libmpfr-dev (now available in the Debian
     archive).  Closes: #278005.
 
@@ -812,7 +861,7 @@ gmp (4.1.4-3) unstable; urgency=low
 
   * debian/rules: Do not build mpfr library; it will be packaged
     separately from an updated source (see bug #276085).
-  
+
   * debian/rules: Install some internal headers needed to build mpfr.
 
  -- Steve M. Robbins <smr@debian.org>  Wed, 13 Oct 2004 00:15:01 -0400
@@ -822,7 +871,7 @@ gmp (4.1.4-2) unstable; urgency=high
   * gmp-impl.h: Apply patch to fix build on amd64
     (http://swox.com/list-archives/gmp-discuss/2004-September/001376.html)
     (thanks, Torbjorn Granlund).  Closes: #275129.
-  
+
   * debian/rules: Add "make check".
 
  -- Steve M. Robbins <smr@debian.org>  Mon, 11 Oct 2004 14:39:03 -0400
@@ -842,7 +891,7 @@ gmp (4.1.3-3) unstable; urgency=low
 
 gmp (4.1.3-2) unstable; urgency=low
 
-  * debian/control: Weaken the relationship of libgmp3-dev with libstdc++-dev 
+  * debian/control: Weaken the relationship of libgmp3-dev with libstdc++-dev
   from "depends" to "recommends" as it is perfectly possible to develop
   on a C-only system.  Closes: #254265.
 
@@ -853,18 +902,18 @@ gmp (4.1.3-1) unstable; urgency=low
   * New upstream.  Closes: #248317.
     - debian/rules: The FFT bug (#234984) has been fixed, so we configure
       with fft again.
-  
+
   * Update to standards version 3.6.1
     - debian/rules: Set LDFLAGS to '-Wl,-z,defs' so that any undefined
       reference in building the shared libs is flagged.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Sun, 16 May 2004 00:30:32 -0400
 
 gmp (4.1.2-4) unstable; urgency=low
 
   * Configure using --disable-fft; a workaround for a critical bug in FFT
     multiply code.  Closes: #234984.
-  
+
   * debian/rules: Do not install /usr/share/info/dir*.  Closes: #219599.
 
  -- Steve M. Robbins <smr@debian.org>  Wed, 17 Mar 2004 20:01:01 -0500
@@ -882,12 +931,12 @@ gmp (4.1.2-3) unstable; urgency=low
     to use the newer version to have libgmpxx correctly linked with
     g++ rather than gcc.  See the discussion in bug #143543.  Thanks,
     Kevin!
-  
+
   * Remove pa32 EPILOGUE statement patches.  Closes: #186786.
-  
+
   * gmp-impl.h: Add __s390__ case for the ieee_double_extract union
     #ifdefs.  Corrects a build failure.  Thanks, Kevin Ryde.
-  
+
   * mpfr/rnd_mode.c: #ifdef around each case in mpfr_set_machine_rnd_mode().
     Corrects build failure on arm.  Thanks again, Kevin Ryde.
 
@@ -902,20 +951,20 @@ gmp (4.1.2-2) unstable; urgency=low
   * Could find no debian packages that rely on internal GMP headers
     being installed.  Do not install longlong.h (closes: #184540)
     nor gmp-mparam.h (closes: #184543).
-  
-  * Build C++ libraries.  Closes: #143543.  
+
+  * Build C++ libraries.  Closes: #143543.
     Requires updated libtool in order to correctly support inter-library
     dependency.  Had to re-run all the autotools, so the diff is much
     larger, alas.
-  
+
   * debian/rules: Remove m68k compiler bug workaround.  Closes: #186787.
-  
+
   * mpn/Makeasm.am: Remove "--tag=CC" from libtool invocation as new libtool
     does not grok --tag.
-  
+
   * configfsf.guess:
   * configfsf.sub: Update with newest version of file in /usr/share/misc.
-  
+
   * Build MPFR library.
 
  -- Steve M. Robbins <smr@debian.org>  Fri,  4 Apr 2003 23:15:59 -0500
@@ -923,18 +972,18 @@ gmp (4.1.2-2) unstable; urgency=low
 gmp (4.1.2-1) unstable; urgency=low
 
   * New maintainer team.
-  
+
   * New upstream source.
     Closes:  #158397.
-  
+
   * Adhere to policy version to 3.5.8.
-  
+
   * Make -dev package depend on ${Source-Version} of library package.
     Closes: #146604.
-  
+
   * Make -doc package replace old libgmp3 packages that formerly held
     the info files.
-  
+
  -- Steve M. Robbins <smr@debian.org>  Wed, 26 Feb 2003 19:10:43 -0500
 
 libgmp3 (4.0.1-3) unstable; urgency=low
@@ -1009,7 +1058,7 @@ libgmp3 (3.1.1-9) unstable; urgency=low
 
 libgmp3 (3.1.1-8) unstable; urgency=low
 
-  * created new package (libgmp3-doc) containing gmp.info and 
+  * created new package (libgmp3-doc) containing gmp.info and
   *         additional docs and demos previously in runtime, closes: #96224
   * added README.headers explaining the additional header files in -dev
   * added README.doc to include in runtime and -dev packages
@@ -1105,7 +1154,7 @@ libgmp2 (2.0.2-4) unstable; urgency=low
   * Added all header files to /usr/include - closes: #48948
   * Removed /usr/include/gmp2 and replaced links with header files.
   * Applied patch to package description - closes: #51818
-  * Added conflict with older -dev packages - closes: #49284 
+  * Added conflict with older -dev packages - closes: #49284
   * Moved sparc rules patch into all architectures
   *                        (by adding -DPIC to CFLAGS)
 
@@ -1131,7 +1180,7 @@ libgmp2 (2.0.2-2) unstable; urgency=low
   *           fixes: 38686, 38693, 38786, 38800, 38846, 38849, 38859
   *           fixes: 38664, 38665, 38697
   * Added compatibility links for the old and the new linked programs.
-  * Changed cp to install for install scripts, giving proper execute 
+  * Changed cp to install for install scripts, giving proper execute
   *    permissions with any umask, fixes: 38696
   * Added Conflicts: gmp2, gmp
   *       fixes: 38666, 38683, 38515, 38913, 38773, 38677
@@ -1286,4 +1335,3 @@ gmp (1.3.2-1)
   * Initial Debian release.
 
  -- Ian Jackson <iwj10@cus.cam.ac.uk>  Sat, 29 Jul 1995 03:20:19 +0100
-

@@ -1,12 +1,10 @@
 #!/usr/bin/make -f
 
-ORIG_SRC_VERSION = 6.2.1
-
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
 include /usr/share/dpkg/architecture.mk
 
-# Uncomment this to turn on verbose mode. 
+# Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
 # This has to be exported to make some magic below work.
@@ -24,7 +22,7 @@ ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
   endif
 endif
 
-#export CFLAGS = -Wall -g 
+#export CFLAGS = -Wall -g
 #export LDFLAGS = -Wl,-Bsymbolic-functions
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
@@ -68,28 +66,13 @@ CC   = $(DEB_HOST_GNU_TYPE)-gcc
 CXX   = $(DEB_HOST_GNU_TYPE)-g++
 
 
-get-orig-source: gmp-$(ORIG_SRC_VERSION).tar.xz
-	tar --xz -xf $<
-	mv gmp-$(ORIG_SRC_VERSION) gmp-$(ORIG_SRC_VERSION)+dfsg
-	mkdir gmp-doc-$(ORIG_SRC_VERSION)
-	mv gmp-$(ORIG_SRC_VERSION)+dfsg/doc/ gmp-doc-$(ORIG_SRC_VERSION)/
-	mkdir gmp-$(ORIG_SRC_VERSION)+dfsg/doc
-	touch gmp-$(ORIG_SRC_VERSION)+dfsg/doc/Makefile.am
-	touch gmp-$(ORIG_SRC_VERSION)+dfsg/doc/Makefile.in
-	cd gmp-$(ORIG_SRC_VERSION)+dfsg/ && autoreconf --force --install
-	tar --xz -cf gmp_$(ORIG_SRC_VERSION)+dfsg.orig.tar.xz gmp-$(ORIG_SRC_VERSION)+dfsg
-	tar --xz -cf gmp-doc_$(ORIG_SRC_VERSION).orig.tar.xz gmp-doc-$(ORIG_SRC_VERSION)
-	rm -rf gmp-$(ORIG_SRC_VERSION)+dfsg gmp-doc-$(ORIG_SRC_VERSION)
-
-gmp-$(ORIG_SRC_VERSION).tar.xz:
-	wget https://gmplib.org/download/gmp/$@
-
 configure: configure-stamp
 configure-stamp:
+	dh_autoreconf
 	mkdir -p build
 	cd build && ../configure $(confflags_ma) \
 	    AR=$(AR) CC="$(CC)" CFLAGS="$(CFLAGS)" \
-	    CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS)"
+	    CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS)" ASMFLAGS="--debug-prefix-map=$(CURDIR)=."
 	touch $@
 
 build: build-stamp
@@ -116,6 +99,9 @@ install: build-stamp install-prep
 	# Install places gmp.h in 'includeexecdir' which is non-standard and cannot be set at compile time,
 	# so override it at install.
 	$(MAKE) DESTDIR=`pwd`/debian/tmp includeexecdir=/usr/include/$(DEB_HOST_MULTIARCH) -C build install
+
+	# Replace embedded build path with a placeholder string
+	sed -i -e "s,$(CURDIR),BUILDPATH,g" debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/gmp.h
 
 	dh_install -plibgmp10 usr/lib/*/libgmp.so.*
 	dh_install -plibgmpxx4ldbl usr/lib/*/libgmpxx.so.*
@@ -160,7 +146,7 @@ binary-indep: build install
 
 # Build architecture dependant packages using the common target.
 binary-arch: build install $(EXTRA_INSTALL)
-	$(MAKE) -f debian/rules DH_OPTIONS=-s binary-common
+	$(MAKE) -f debian/rules DH_OPTIONS=-a binary-common
 
 # Any other binary targets build just one binary package at a time.
 binary-%: build install
