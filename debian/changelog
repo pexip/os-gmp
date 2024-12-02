@@ -1,3 +1,27 @@
+gmp (2:6.3.0+dfsg-3) unstable; urgency=medium
+
+  [ Steve Robbins ]
+  * [ac10b44] Apply upstream change.  Fixes: #1057344
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 01 Dec 2024 18:17:34 -0600
+
+gmp (2:6.3.0+dfsg-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Steve M. Robbins <smr@debian.org>  Mon, 31 Jul 2023 20:22:53 -0500
+
+gmp (2:6.3.0+dfsg-1) experimental; urgency=medium
+
+  [ Steve M. Robbins ]
+  * New upstream version
+  * Standards-Version: 4.6.2 (routine-update)
+  * Fix Maintainer name of Debian Science team (routine-update)
+  * Rules-Requires-Root: no (routine-update)
+  * [668d7a3] Rebased patches.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 30 Jul 2023 22:16:24 -0500
+
 gmp (2:6.2.1+dfsg1-1.1) unstable; urgency=medium
 
   * Non-maintainer upload by the Reproducible Builds team.

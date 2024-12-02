@@ -1,2 +1,2 @@
-CVE-2021-43618.patch
 Exclude-doc-Makefile.patch
+trust-vsprintf-return.patch
